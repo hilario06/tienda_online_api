@@ -27,7 +27,18 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry-rails', '~> 0.3.9'
+  gem 'rspec-rails', '~> 5.1', '>= 5.1.2'
+  gem 'factory_bot_rails', '~> 6.2'
+end
+
+group :test do
+  # limpia la bd cuando se hace las pruebas
+  gem 'database_cleaner', '~> 2.0', '>= 2.0.1'
+  gem 'database_cleaner-active_record', '~> 2.0', '>= 2.0.1'
+  # proporciona methods para escribir nuestros pruebas
+  gem 'shoulda-matchers', '~> 5.1'
 end
 
 group :development do
@@ -38,3 +49,9 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'faker', '~> 2.21'
+gem 'rails-i18n', '~> 7.0', '>= 7.0.5'
+gem 'paranoia', '~> 2.6'
+gem 'table_print', '~> 1.5', '>= 1.5.7'
+gem 'annotate', '~> 3.2'
